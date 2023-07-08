@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+db.json
+./db.json
+
+.idea
+/.idea/vcs.xml
+/.idea/modules.xml
+/.idea/severjanochka.iml
+/.idea/workspace.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/watcherTasks.xml
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+=======
+
+/.vs/severjanochka/v16/.suo
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json

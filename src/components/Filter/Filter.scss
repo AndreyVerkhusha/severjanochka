@@ -1,0 +1,124 @@
+@use '../../styles/Variables';
+
+.filter {
+  margin-right: 40px;
+  max-width: 272px;
+  width: 100%;
+
+  .title {
+    margin-bottom: 40px;
+    padding: 10px;
+    background: #F3F2F1;
+    border-radius: 4px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .price_clear {
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div:first-child {
+      line-height: 150%;
+      color: #000000;
+    }
+
+    div:last-child {
+      padding: 4px 8px;
+      background: #F3F2F1;
+      font-size: 12px;
+      line-height: 150%;
+      border-radius: 4px;
+      color: #606060;
+      cursor: pointer;
+    }
+  }
+
+  .inputs_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      padding: 8px 16px;
+      max-width: 125px;
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid #BFBFBF;
+      border-radius: 4px;
+      line-height: 28px;
+      outline: none;
+    }
+
+    .line {
+      margin: 0 4px;
+      width: 15px;
+      height: 1px;
+      background-color: #414141;
+    }
+  }
+
+  .range_block {
+    margin: 13px auto 0 auto;
+    max-width: calc(100% - 20px);
+
+    .rc-slider-rail {
+      top: 10px;
+    }
+
+    .rc-slider-track.rc-slider-track-1 {
+      top: 10px;
+      background: #70C05B;
+    }
+
+    .rc-slider-handle.rc-slider-handle-1,
+    .rc-slider-handle.rc-slider-handle-2 {
+      border: 1px solid white;
+      opacity: 1;
+      width: 24px;
+      height: 24px;
+      background: #70C05B;
+      box-shadow: none;
+    }
+  }
+
+  .category_list {
+    margin: 50px 0;
+
+    div {
+      margin-bottom: 30px;
+      line-height: 150%;
+      transition: all .3s;
+      cursor: pointer;
+
+      &:hover {
+        transition: all .3s;
+        color: Variables.$orange
+      }
+    }
+
+    div:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .btn_put {
+    margin-top: 30px;
+    padding: 8px;
+    position: relative;
+    min-height: 40px;
+    color: white;
+    line-height: 150%;
+    text-align: center;
+    background: #FF6633;
+    border-radius: 4px;
+    cursor: pointer;
+
+    .spin_custom {
+      left: calc(50% - 10px);
+      transform: translateX(-50%);
+    }
+  }
+}

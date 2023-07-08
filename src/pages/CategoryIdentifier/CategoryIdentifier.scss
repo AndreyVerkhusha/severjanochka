@@ -1,0 +1,35 @@
+.catalog_identifier {
+  padding-top: 76px;
+
+  .h1 {
+    margin-bottom: 60px;
+    font-weight: 700;
+    font-size: 64px;
+  }
+
+  main {
+    display: flex;
+
+    .product_list {
+      .list {
+        justify-content: inherit;
+
+        li {
+          &:nth-child(3n+3) {
+            margin-right: 0;
+          }
+
+          &:nth-child(4n+4) {
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+
+    .filter {
+      .btn_put {
+        margin-top: 30px;
+      }
+    }
+  }
+}

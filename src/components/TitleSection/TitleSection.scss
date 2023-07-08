@@ -1,0 +1,30 @@
+.title {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div:first-child {
+    font-weight: 700;
+    font-size: 36px;
+  }
+
+  div:last-child {
+    display: flex;
+    cursor: pointer;
+
+    span {
+      margin-right: 16px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      max-width: 120px;
+      width: 100%;
+      color: #606060;
+    }
+
+    img {
+      transform: rotate(-90deg);
+    }
+  }
+}
