@@ -1,0 +1,324 @@
+@use "src/styles/Variables";
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 11;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo_block {
+    display: flex;
+    width: 100%;
+    margin: 20px 40px 20px 0;
+    cursor: pointer;
+  }
+
+  .btn_catalog {
+    margin-right: 16px;
+    padding: 8px;
+    display: flex;
+    max-width: 170px;
+    width: 100%;
+    background: Variables.$green;
+    border-radius: 4px;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      text-align: center;
+      line-height: 150%;
+      color: white;
+    }
+  }
+
+  .catalog_drop-down {
+    position: absolute;
+    top: 73px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    background: #FFFFFF;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: all .3s;
+    visibility: hidden;
+    z-index: -2;
+
+    .catalog_list {
+      margin: 40px auto;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      max-width: 1220px;
+
+      li {
+        margin-bottom: 25px;
+        max-width: 272px;
+        width: 100%;
+        font-weight: 700;
+        line-height: 150%;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+          transition: all .3s;
+          color: Variables.$orange;
+        }
+      }
+    }
+
+    &.open {
+      transition: all .3s;
+      max-height: 200px;
+      opacity: 1;
+      z-index: 0;
+      visibility: initial;
+    }
+  }
+
+  .search {
+    position: relative;
+    margin-right: 40px;
+    height: 40px;
+    width: 100%;
+
+    input {
+      padding: 8px 42px 8px 16px;
+      max-width: 375px;
+      width: 100%;
+      height: 100%;
+      color: #333333;
+      border: 1px solid Variables.$green;
+      border-radius: 4px;
+      background-color: white;
+      outline: none;
+
+      &:focus {
+      }
+
+      &::placeholder {
+        color: Variables.$light_grey;
+      }
+    }
+
+    .drop_search {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 100%;
+      max-height: 0;
+      visibility: hidden;
+      background: #FFFFFF;
+      border: 1px solid transparent;
+      border-top: 0;
+      box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+      border-radius: 0 0 4px 4px;
+      transition: max-height .4s, visibility .4s;
+
+      div,
+      svg {
+        display: none;
+      }
+
+      &.open {
+        border-color: Variables.$green;
+        transition: max-height .4s, visibility .4s;
+        max-height: 200px;
+        min-height: fit-content;
+        visibility: inherit;
+
+        div {
+          margin-top: 10px;
+          padding: 0 10px 0 15px;
+          display: inline-block;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 150%;
+          transition: all .3s;
+          cursor: pointer;
+
+          svg {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: 15px;
+            vertical-align: bottom;
+            transition: all .3s;
+          }
+
+          &:hover {
+            transition: all .3s;
+            color: Variables.$green;
+
+            svg {
+              path {
+                transition: all .3s;
+                fill: Variables.$green;
+              }
+            }
+          }
+
+          &:last-child {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .search_icon {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .group_buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .button {
+      margin-right: 24px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content;
+      text-align: center;
+      transition: all .3s;
+      cursor: pointer;
+
+      img {
+        margin-bottom: 8px;
+        max-width: 24px;
+        min-width: 24px;
+        max-height: 24px;
+        min-height: 24px;
+      }
+
+      svg {
+        margin-bottom: 8px;
+        width: 20px;
+        height: 24px;
+        stroke: black;
+        stroke-width: 0.5px;
+
+        path {
+          transition: all .3s;
+          fill: transparent;
+        }
+
+        &:hover,
+        &.active {
+          opacity: 1;
+
+          svg {
+            path {
+              transition: all .3s;
+              fill: Variables.$orange;
+              stroke: transparent;
+            }
+          }
+        }
+      }
+
+      span {
+        font-size: 12px;
+      }
+
+      .count {
+        padding: 5px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: -7px;
+        width: 15px;
+        height: 15px;
+        align-items: center;
+        border-radius: 50%;
+        background-color: Variables.$orange;
+        color: white;
+
+        span {
+          font-size: 10px;
+        }
+      }
+
+      &:nth-child(1) {
+        .count {
+          right: 9px;
+        }
+      }
+
+      &:nth-child(2) {
+        .count {
+          right: -2px;
+        }
+      }
+
+      &:nth-child(3) {
+        margin-right: 40px;
+
+        .count {
+          right: 1px;
+        }
+      }
+
+      &:hover,
+      &.active {
+        transition: all .3s;
+        color: Variables.$orange;
+
+        svg {
+          path {
+            transition: all .3s;
+            stroke: Variables.$orange;
+          }
+        }
+      }
+    }
+
+  }
+
+  .sign_in {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 35px;
+    background: #F3F2F1;
+    border-radius: 4px;
+
+    div {
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 12px;
+      transition: all .3s linear;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.active {
+        background: #70C05B;
+        color: white;
+      }
+    }
+  }
+}

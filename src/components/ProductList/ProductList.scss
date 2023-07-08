@@ -1,0 +1,209 @@
+@use "../../styles/Variables";
+
+.product_list {
+  margin-bottom: 100px;
+  width: 100%;
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    li {
+      margin: 0 30px 20px 0;
+      padding-bottom: 8px;
+      position: relative;
+      max-width: 275px;
+      width: 100%;
+      box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+      background: #FFFFFF;
+      border-radius: 8px;
+      transition: all .2s;
+      cursor: pointer;
+
+      .group_blocks {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .preview_image-block {
+          display: flex;
+          position: relative;
+          width: 100%;
+          border-radius: 8px 8px 0 0;
+          background: white;
+
+          .item_img {
+            margin: 0 auto;
+            max-width: 275px;
+            height: 160px;
+          }
+
+          .favorite_icon {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            opacity: 0.5;
+            border-radius: 4px;
+            z-index: 10;
+            cursor: pointer;
+
+            svg {
+              width: 20px;
+              height: 24px;
+              stroke: black;
+
+              path {
+                transition: all .3s;
+                fill: transparent;
+              }
+            }
+
+            &:hover {
+              opacity: 1;
+
+              svg {
+                circle {
+                  fill: black;
+                }
+              }
+            }
+
+
+            &.active {
+              opacity: 1;
+
+              svg {
+                path {
+                  transition: all .3s;
+                  fill: Variables.$orange;
+                  stroke: transparent;
+                }
+              }
+            }
+
+          }
+
+          .discount {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 8px;
+            left: 8px;
+            width: 56px;
+            height: 32px;
+            text-align: center;
+            color: white;
+            background: #FF6633;
+            border-radius: 4px;
+          }
+        }
+
+        .preview_info-block {
+          padding: 8px 8px 0 8px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background: white;
+
+          .price {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            div:first-child {
+              display: flex;
+              flex-direction: column;
+              width: fit-content;
+
+              span:first-child {
+                font-weight: 700;
+                font-size: 18px;
+              }
+
+              span:last-child {
+                font-size: 12px;
+                color: #BFBFBF;
+              }
+            }
+
+            div:last-child {
+              display: flex;
+              flex-direction: column;
+              width: fit-content;
+
+              span:first-child {
+                color: #606060;
+              }
+
+              span:last-child {
+                font-size: 12px;
+                color: #BFBFBF;
+                text-align: end;
+              }
+            }
+          }
+
+          .name {
+            margin-bottom: 8px;
+            width: 100%;
+            font-size: 16px;
+          }
+
+          .rating {
+            margin-top: auto;
+          }
+
+          .btn_in-basket {
+            padding: 8px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            color: Variables.$green;
+            border: 1px solid Variables.$green;
+            border-radius: 4px;
+            transition: all .5s;
+
+            .spin_custom {
+              top: 5px;
+              left: 115px;
+            }
+
+            &:hover {
+              border-color: Variables.$orange;
+              background-color: Variables.$orange;
+              color: white;
+            }
+
+            &.disabled {
+              background-color: white !important;
+              color: white !important;
+              border-color: Variables.$green !important;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+      }
+
+      &:nth-child(4n+4) {
+        margin-right: 0;
+      }
+    }
+  }
+
+}
+

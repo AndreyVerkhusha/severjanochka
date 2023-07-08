@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "rules": {
+    "no-console": "warn", // убрать консоль-лог
+    "quotes": ["warn", "double"], // предпочтительные кавычки в js файлах
+    "jsx-quotes": ["error", "prefer-double"], // предпочтительные кавычки в jsx разметке
+    //  "prefer-const": "warn", если переменная не изменяется, то сделать её константой
+     // "indent": ["error", 4], пробелы перед строками кода
+    "max-len": ["error", {"code":  125}], // макс длина строки jsx
+    "comma-dangle": ["error", "never"], // запятая в конце массива или объекта
+    "semi": ["warn", "always"] // точка с запятой в конце выражения
+   /* "import/order": ["error", {
+       "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"]  правило для сортировки импортов
+        "newlines-between": "always-and-inside-groups" должен быть пробел после импорта React
+    }]*/
+  }
+}

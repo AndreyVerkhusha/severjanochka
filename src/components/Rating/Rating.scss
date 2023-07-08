@@ -1,0 +1,29 @@
+@use "./src/styles/Variables";
+
+.rating {
+  margin: auto 0 8px 0;
+  width: 100%;
+  display: flex;
+
+  div {
+    position: relative;
+
+    svg {
+      margin-right: 5px;
+
+      path {
+        transition: all .3s;
+        fill: #BFBFBF;
+      }
+    }
+
+    &.active {
+      svg {
+        path {
+          transition: all .3s;
+          fill: Variables.$orange;
+        }
+      }
+    }
+  }
+}
